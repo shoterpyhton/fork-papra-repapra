@@ -130,7 +130,7 @@ export default function DocumentViewScreen() {
   const isLoading = documentQuery.isLoading || documentFileQuery.isLoading;
   const error = documentQuery.error ?? documentFileQuery.error;
   const documentFile = documentFileQuery.data;
-  const documentName = documentFile?.doc.name ?? 'Document';
+  const documentName = documentFile?.doc.name ?? 'Документ';
 
   return (
     <SafeAreaView style={styles.container}>
@@ -139,7 +139,7 @@ export default function DocumentViewScreen() {
         ? (
             <View style={styles.loadingContainer}>
               <ActivityIndicator size="large" color={themeColors.primary} />
-              <Text style={styles.loadingText}>Loading document...</Text>
+              <Text style={styles.loadingText}>Загрузка документа...</Text>
             </View>
           )
         : error != null
@@ -150,20 +150,20 @@ export default function DocumentViewScreen() {
                   size={64}
                   color={themeColors.mutedForeground}
                 />
-                <Text style={styles.errorText}>Failed to load document</Text>
+                <Text style={styles.errorText}>Не удалось загрузить документ</Text>
                 <TouchableOpacity
                   style={styles.errorButton}
                   onPress={() => {
                     void documentQuery.refetch();
                   }}
                 >
-                  <Text style={styles.errorButtonText}>Retry</Text>
+                  <Text style={styles.errorButtonText}>Повторить</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.errorButton}
                   onPress={() => router.back()}
                 >
-                  <Text style={styles.errorButtonText}>Go Back</Text>
+                  <Text style={styles.errorButtonText}>Назад</Text>
                 </TouchableOpacity>
               </View>
             )

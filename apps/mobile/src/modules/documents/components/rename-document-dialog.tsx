@@ -40,8 +40,8 @@ export function RenameDocumentDialog({
   const handleConfirm = () => {
     if (documentName.trim() === '') {
       showAlert({
-        title: 'Invalid Name',
-        message: 'Please enter a document name',
+        title: 'Неверное название',
+        message: 'Введите название документа',
       });
       return;
     }
@@ -67,7 +67,7 @@ export function RenameDocumentDialog({
           <TouchableWithoutFeedback>
             <View style={styles.content}>
               <View style={styles.header}>
-                <Text style={styles.title}>Document Name</Text>
+                <Text style={styles.title}>Название документа</Text>
               </View>
 
               <View style={styles.inputContainer}>
@@ -75,7 +75,7 @@ export function RenameDocumentDialog({
                   style={styles.input}
                   value={documentName}
                   onChangeText={setDocumentName}
-                  placeholder="Enter document name"
+                  placeholder="Введите название документа"
                   placeholderTextColor={themeColors.mutedForeground}
                   autoFocus
                   onSubmitEditing={handleConfirm}
@@ -87,13 +87,13 @@ export function RenameDocumentDialog({
                   style={[styles.button, styles.cancelButton]}
                   onPress={handleCancel}
                 >
-                  <Text style={styles.cancelButtonText}>Cancel</Text>
+                  <Text style={styles.cancelButtonText}>Отмена</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={[styles.button, styles.confirmButton]}
                   onPress={handleConfirm}
                 >
-                  <Text style={styles.confirmButtonText}>Save</Text>
+                  <Text style={styles.confirmButtonText}>Сохранить</Text>
                 </TouchableOpacity>
               </View>
             </View>

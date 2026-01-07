@@ -57,8 +57,8 @@ export function SignupScreen() {
 
         if (isEmailVerificationRequired) {
           showAlert({
-            title: 'Check your email',
-            message: 'We sent you a verification link. Please check your email to verify your account.',
+            title: 'Проверьте почту',
+            message: 'Мы отправили вам ссылку для подтверждения. Проверьте почту для активации аккаунта.',
             buttons: [{ text: 'OK', onPress: () => router.replace('/auth/login') }],
           });
         } else {
@@ -66,8 +66,8 @@ export function SignupScreen() {
         }
       } catch (error) {
         showAlert({
-          title: 'Signup Failed',
-          message: error instanceof Error ? error.message : 'An error occurred',
+          title: 'Ошибка регистрации',
+          message: error instanceof Error ? error.message : 'Произошла ошибка',
         });
       } finally {
         setIsSubmitting(false);
@@ -91,12 +91,12 @@ export function SignupScreen() {
   if (!isRegistrationEnabled) {
     return (
       <View style={[styles.container, styles.centerContent]}>
-        <Text style={styles.errorText}>Registration is currently disabled</Text>
+        <Text style={styles.errorText}>Регистрация отключена</Text>
         <TouchableOpacity
           style={styles.linkButton}
           onPress={() => router.back()}
         >
-          <Text style={styles.linkText}>Go back to login</Text>
+          <Text style={styles.linkText}>Вернуться к входу</Text>
         </TouchableOpacity>
       </View>
     );
@@ -114,18 +114,18 @@ export function SignupScreen() {
         <BackToServerSelectionButton />
 
         <View style={styles.header}>
-          <Text style={styles.title}>Create Account</Text>
-          <Text style={styles.subtitle}>Sign up to get started</Text>
+          <Text style={styles.title}>Создать аккаунт</Text>
+          <Text style={styles.subtitle}>Зарегистрируйтесь для начала работы</Text>
         </View>
 
         <View style={styles.formContainer}>
           <form.Field name="name">
             {field => (
               <View style={styles.fieldContainer}>
-                <Text style={styles.label}>Name</Text>
+                <Text style={styles.label}>Имя</Text>
                 <TextInput
                   style={styles.input}
-                  placeholder="Your name"
+                  placeholder="Ваше имя"
                   placeholderTextColor={themeColors.mutedForeground}
                   value={field.state.value}
                   onChangeText={field.handleChange}
@@ -160,10 +160,10 @@ export function SignupScreen() {
           <form.Field name="password">
             {field => (
               <View style={styles.fieldContainer}>
-                <Text style={styles.label}>Password</Text>
+                <Text style={styles.label}>Пароль</Text>
                 <TextInput
                   style={styles.input}
-                  placeholder="At least 8 characters"
+                  placeholder="Минимум 8 символов"
                   placeholderTextColor={themeColors.mutedForeground}
                   value={field.state.value}
                   onChangeText={field.handleChange}
@@ -185,7 +185,7 @@ export function SignupScreen() {
                   <ActivityIndicator color="#fff" />
                 )
               : (
-                  <Text style={styles.buttonText}>Sign Up</Text>
+                  <Text style={styles.buttonText}>Зарегистрироваться</Text>
                 )}
           </TouchableOpacity>
         </View>
@@ -194,7 +194,7 @@ export function SignupScreen() {
           style={styles.linkButton}
           onPress={() => router.back()}
         >
-          <Text style={styles.linkText}>Already have an account? Sign in</Text>
+          <Text style={styles.linkText}>Уже есть аккаунт? Войти</Text>
         </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>

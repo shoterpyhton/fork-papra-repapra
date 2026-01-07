@@ -49,7 +49,7 @@ export function OrganizationPickerDrawer({ visible, onClose }: OrganizationPicke
       >
         <View style={styles.drawer}>
           <View style={styles.header}>
-            <Text style={styles.title}>Select Organization</Text>
+            <Text style={styles.title}>Выберите папку</Text>
           </View>
 
           {isLoading
@@ -93,7 +93,7 @@ export function OrganizationPickerDrawer({ visible, onClose }: OrganizationPicke
             style={styles.createButton}
             onPress={handleCreateOrganization}
           >
-            <Text style={styles.createButtonText}>+ Create New Organization</Text>
+            <Text style={styles.createButtonText}>+ Создать папку</Text>
           </TouchableOpacity>
         </View>
       </TouchableOpacity>

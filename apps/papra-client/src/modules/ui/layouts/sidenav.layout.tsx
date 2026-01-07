@@ -136,7 +136,7 @@ export const SidenavLayout: ParentComponent<{
   const { hasPermission } = useCurrentUser();
   const aboutDialog = useAboutDialog();
 
-  const { promptImport, uploadDocuments } = useDocumentUpload();
+  const { uploadDocuments } = useDocumentUpload();
 
   return (
     <div class="flex flex-row h-screen min-h-0">
@@ -173,12 +173,6 @@ export const SidenavLayout: ParentComponent<{
           <div class="flex items-center gap-2">
 
             <GlobalDropArea onFilesDrop={uploadDocuments} />
-            <Button onClick={promptImport}>
-              <div class="i-tabler-upload size-4" />
-              <span class="hidden sm:inline ml-2">
-                {t('layout.menu.import-document')}
-              </span>
-            </Button>
 
             <DropdownMenu>
               <DropdownMenuTrigger as={Button} class="text-base hidden sm:flex" variant="outline" aria-label="Theme switcher">

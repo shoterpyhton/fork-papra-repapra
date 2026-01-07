@@ -48,8 +48,8 @@ export function ServerSelectionScreen() {
       router.replace('/auth/login');
     } catch {
       showAlert({
-        title: 'Connection Failed',
-        message: 'Could not reach the server.',
+        title: 'Ошибка подключения',
+        message: 'Не удалось подключиться к серверу.',
       });
     } finally {
       setIsValidating(false);
@@ -66,8 +66,8 @@ export function ServerSelectionScreen() {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.header}>
-          <Text style={styles.title}>Welcome to Papra</Text>
-          <Text style={styles.subtitle}>Choose your server</Text>
+          <Text style={styles.title}>Добро пожаловать в Papra</Text>
+          <Text style={styles.subtitle}>Выберите сервер</Text>
         </View>
 
         <View style={styles.options}>
@@ -79,9 +79,9 @@ export function ServerSelectionScreen() {
             onPress={() => setSelectedOption('managed')}
             disabled={isValidating}
           >
-            <Text style={styles.optionTitle}>Managed Cloud</Text>
+            <Text style={styles.optionTitle}>Облачный сервис</Text>
             <Text style={styles.optionDescription}>
-              Use the official Papra cloud service
+              Использовать официальный облачный сервис Papra
             </Text>
           </TouchableOpacity>
 
@@ -93,9 +93,9 @@ export function ServerSelectionScreen() {
             onPress={() => setSelectedOption('self-hosted')}
             disabled={isValidating}
           >
-            <Text style={styles.optionTitle}>Self-Hosted</Text>
+            <Text style={styles.optionTitle}>Свой сервер</Text>
             <Text style={styles.optionDescription}>
-              Connect to your own Papra server
+              Подключиться к своему серверу Papra
             </Text>
           </TouchableOpacity>
         </View>
@@ -111,14 +111,14 @@ export function ServerSelectionScreen() {
                   <ActivityIndicator color="#fff" />
                 )
               : (
-                  <Text style={styles.buttonText}>Continue with Managed</Text>
+                  <Text style={styles.buttonText}>Продолжить</Text>
                 )}
           </TouchableOpacity>
         )}
 
         {selectedOption === 'self-hosted' && (
           <View style={styles.customUrlContainer}>
-            <Text style={styles.inputLabel}>Server URL</Text>
+            <Text style={styles.inputLabel}>URL сервера</Text>
             <TextInput
               style={styles.input}
               placeholder="https://your-server.com"
@@ -140,7 +140,7 @@ export function ServerSelectionScreen() {
                     <ActivityIndicator color="#fff" />
                   )
                 : (
-                    <Text style={styles.buttonText}>Connect</Text>
+                    <Text style={styles.buttonText}>Подключиться</Text>
                   )}
             </TouchableOpacity>
           </View>

@@ -83,13 +83,13 @@ export function ImportDrawer({ visible, onClose }: ImportDrawerProps) {
       await queryClient.invalidateQueries({ queryKey: ['organizations', currentOrganizationId, 'documents'] });
 
       showAlert({
-        title: 'Upload Successful',
-        message: `Successfully uploaded: ${file.name}`,
+        title: 'Загрузка завершена',
+        message: `Успешно загружен: ${file.name}`,
       });
     } catch (error) {
       showAlert({
-        title: 'Error',
-        message: error instanceof Error ? error.message : 'Failed to pick document',
+        title: 'Ошибка',
+        message: error instanceof Error ? error.message : 'Не удалось выбрать документ',
       });
     }
   };
@@ -147,8 +147,8 @@ export function ImportDrawer({ visible, onClose }: ImportDrawerProps) {
     } catch (error) {
       console.error('Error processing scanned image:', error);
       showAlert({
-        title: 'Scan Error',
-        message: error instanceof Error ? error.message : 'Failed to process scanned document',
+        title: 'Ошибка сканирования',
+        message: error instanceof Error ? error.message : 'Не удалось обработать отсканированный документ',
       });
     }
   };
@@ -185,15 +185,15 @@ export function ImportDrawer({ visible, onClose }: ImportDrawerProps) {
         setRenameModalVisible(true);
       } else {
         showAlert({
-          title: 'Scan Error',
-          message: 'No images were scanned',
+          title: 'Ошибка сканирования',
+          message: 'Изображения не были отсканированы',
         });
       }
     } catch (error) {
       console.error('Error in handleScan:', error);
       showAlert({
-        title: 'Scan Error',
-        message: error instanceof Error ? error.message : 'Failed to scan document',
+        title: 'Ошибка сканирования',
+        message: error instanceof Error ? error.message : 'Не удалось отсканировать документ',
       });
     }
   };
@@ -213,7 +213,7 @@ export function ImportDrawer({ visible, onClose }: ImportDrawerProps) {
         >
           <View style={styles.drawer}>
             <View style={styles.header}>
-              <Text style={styles.title}>Import Document</Text>
+              <Text style={styles.title}>Импорт документа</Text>
             </View>
 
             <View style={styles.optionsContainer}>
@@ -225,9 +225,9 @@ export function ImportDrawer({ visible, onClose }: ImportDrawerProps) {
                   <Icon name="file-plus" size={24} style={styles.optionIcon} />
                 </View>
                 <View style={styles.optionTextContainer}>
-                  <Text style={styles.optionTitle}>Import from Files</Text>
+                  <Text style={styles.optionTitle}>Импорт из файлов</Text>
                   <Text style={styles.optionDescription}>
-                    Choose a document from your device
+                    Выберите документ с устройства
                   </Text>
                 </View>
                 <Icon name="chevron-right" size={18} style={styles.chevronIcon} />
@@ -241,9 +241,9 @@ export function ImportDrawer({ visible, onClose }: ImportDrawerProps) {
                   <Icon name="camera" size={24} style={styles.optionIcon} />
                 </View>
                 <View style={styles.optionTextContainer}>
-                  <Text style={styles.optionTitle}>Scan Document</Text>
+                  <Text style={styles.optionTitle}>Сканировать документ</Text>
                   <Text style={styles.optionDescription}>
-                    Use camera to scan a document
+                    Используйте камеру для сканирования
                   </Text>
                 </View>
                 <Icon name="chevron-right" size={18} style={styles.chevronIcon} />
@@ -254,7 +254,7 @@ export function ImportDrawer({ visible, onClose }: ImportDrawerProps) {
               style={styles.cancelButton}
               onPress={onClose}
             >
-              <Text style={styles.cancelButtonText}>Cancel</Text>
+              <Text style={styles.cancelButtonText}>Отмена</Text>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>

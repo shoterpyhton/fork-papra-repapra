@@ -2,12 +2,14 @@ import type { DropdownMenuSubTriggerProps } from '@kobalte/core/dropdown-menu';
 import type { Component } from 'solid-js';
 import type { Document } from '../documents.types';
 import { A } from '@solidjs/router';
+import { useI18n } from '@/modules/i18n/i18n.provider';
 import { Button } from '@/modules/ui/components/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/modules/ui/components/dropdown-menu';
 import { useDeleteDocument } from '../documents.composables';
 import { useRenameDocumentDialog } from './rename-document-button.component';
 
 export const DocumentManagementDropdown: Component<{ document: Document }> = (props) => {
+  const { t } = useI18n();
   const { deleteDocument } = useDeleteDocument();
   const { openRenameDialog } = useRenameDocumentDialog();
 
@@ -34,7 +36,7 @@ export const DocumentManagementDropdown: Component<{ document: Document }> = (pr
           href={`/organizations/${props.document.organizationId}/documents/${props.document.id}`}
         >
           <div class="i-tabler-info-circle size-4 mr-2" />
-          <span>Document details</span>
+          <span>{t('documents.actions.details')}</span>
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -46,7 +48,7 @@ export const DocumentManagementDropdown: Component<{ document: Document }> = (pr
           })}
         >
           <div class="i-tabler-pencil size-4 mr-2" />
-          <span>Rename document</span>
+          <span>{t('documents.actions.rename')}</span>
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -54,7 +56,7 @@ export const DocumentManagementDropdown: Component<{ document: Document }> = (pr
           onClick={() => deleteDoc()}
         >
           <div class="i-tabler-trash size-4 mr-2" />
-          <span>Delete document</span>
+          <span>{t('documents.actions.delete')}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

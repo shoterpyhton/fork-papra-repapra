@@ -338,12 +338,21 @@ export const translations = {
   'documents.actions.open-in-new-tab': 'Open in new tab',
   'documents.actions.restore': 'Restore',
   'documents.actions.delete': 'Delete',
+  'documents.actions.details': 'Document details',
+  'documents.actions.rename': 'Rename document',
   'documents.actions.edit': 'Edit',
   'documents.actions.cancel': 'Cancel',
   'documents.actions.save': 'Save',
   'documents.actions.saving': 'Saving...',
   'documents.content.alert': 'The content of the document is automatically extracted from the document on upload. It is only used for search and indexing purposes.',
   'documents.content.empty-placeholder': 'This document has no extracted content, you can set it manually here.',
+  'documents.content.updated': 'Document content updated',
+  'documents.content.update-error': 'Failed to update document content',
+  'documents.delete.title': 'Delete document',
+  'documents.delete.confirm': 'Are you sure you want to delete',
+  'documents.delete.confirm-button': 'Delete document',
+  'documents.delete.success': 'Document deleted',
+  'documents.restore.success': 'Document restored',
   'documents.info.id': 'ID',
   'documents.info.name': 'Name',
   'documents.info.type': 'Type',
@@ -366,6 +375,12 @@ export const translations = {
   'import-documents.title.pending': '{{ count }} / {{ total }} documents imported',
   'import-documents.title.none': 'Import documents',
   'import-documents.no-import-in-progress': 'No document import in progress',
+
+  'documents.drop-area.drop-here': 'Drop files here',
+  'documents.drop-area.drag-and-drop': 'Drag and drop files here to import them',
+  'documents.upload-area.drop-to-upload': 'Drop files to upload',
+  'documents.upload-area.drag-and-drop': 'Drag and drop files here to upload',
+  'documents.upload-area.select-files': 'Select files',
 
   'documents.deleted.title': 'Deleted documents',
   'documents.deleted.empty.title': 'No deleted documents',
@@ -423,6 +438,7 @@ export const translations = {
   'tags.delete.success': 'Tag deleted successfully',
   'tags.create.success': 'Tag "{{ name }}" created successfully.',
   'tags.update.success': 'Tag "{{ name }}" updated successfully.',
+  'tags.picker.search': 'Search tags...',
   'tags.form.name.label': 'Name',
   'tags.form.name.placeholder': 'Eg. Contracts',
   'tags.form.name.required': 'Please enter a tag name',
@@ -538,6 +554,7 @@ export const translations = {
   'intake-emails.allowed-origins.add.placeholder': 'Eg. ada@papra.app',
   'intake-emails.allowed-origins.add.button': 'Add',
   'intake-emails.allowed-origins.add.error.exists': 'This email is already in the allowed origins for this intake email',
+  'intake-emails.allowed-origins.add.error.invalid': 'Please enter a valid email address',
 
   // API keys
 
@@ -918,6 +935,9 @@ export const translations = {
   'common.tables.rows-per-page': 'Rows per page',
   'common.tables.pagination-info': 'Page {{ currentPage }} of {{ totalPages }}',
   'common.back-to-home': 'Back to home',
+  'common.cancel': 'Cancel',
+  'common.coming-soon.title': 'Coming Soon',
+  'common.coming-soon.description': 'This feature is coming soon, please check back later.',
 
   // About page
 

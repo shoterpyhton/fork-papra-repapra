@@ -39,8 +39,8 @@ export function OrganizationCreateScreen() {
     },
     onError: (error) => {
       showAlert({
-        title: 'Error',
-        message: error instanceof Error ? error.message : 'Failed to create organization',
+        title: 'Ошибка',
+        message: error instanceof Error ? error.message : 'Не удалось создать папку',
       });
     },
   });
@@ -48,8 +48,8 @@ export function OrganizationCreateScreen() {
   const handleCreate = () => {
     if (organizationName.trim().length === 0) {
       showAlert({
-        title: 'Invalid Name',
-        message: 'Please enter a valid organization name',
+        title: 'Неверное название',
+        message: 'Пожалуйста, введите название папки',
       });
       return;
     }
@@ -69,18 +69,18 @@ export function OrganizationCreateScreen() {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.header}>
-          <Text style={styles.title}>Create organization</Text>
+          <Text style={styles.title}>Создать папку</Text>
           <Text style={styles.subtitle}>
-            Your documents will be grouped by organization. You can create multiple organizations to separate your documents, for example, for personal and work documents.
+            Ваши документы будут сгруппированы по папкам. Вы можете создать несколько папок для разделения документов, например, для личных и рабочих.
           </Text>
         </View>
 
         <View style={styles.formContainer}>
           <View style={styles.fieldContainer}>
-            <Text style={styles.label}>Organization Name</Text>
+            <Text style={styles.label}>Название папки</Text>
             <TextInput
               style={styles.input}
-              placeholder="My Organization"
+              placeholder="Моя папка"
               placeholderTextColor={themeColors.mutedForeground}
               value={organizationName}
               onChangeText={setOrganizationName}
@@ -102,7 +102,7 @@ export function OrganizationCreateScreen() {
                   <ActivityIndicator color="#fff" />
                 )
               : (
-                  <Text style={styles.buttonText}>Create Organization</Text>
+                  <Text style={styles.buttonText}>Создать папку</Text>
                 )}
           </TouchableOpacity>
         </View>

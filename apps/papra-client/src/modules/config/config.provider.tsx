@@ -39,8 +39,8 @@ export const ConfigProvider: ParentComponent = (props) => {
 
     if (result.error) {
       createToast({
-        message: 'Server still unreachable',
-        description: 'The server remains unreachable, try again later.',
+        message: 'Сервер недоступен',
+        description: 'Сервер по-прежнему недоступен, попробуйте позже.',
         type: 'error',
       });
     }
@@ -50,8 +50,8 @@ export const ConfigProvider: ParentComponent = (props) => {
     <Switch>
       <Match when={query.error}>
         <EmptyState
-          title="Server unreachable"
-          description="The server seems to be unreachable, if you are self-hosting, make sure the server is running and properly configured. You may want to check the console for more information."
+          title="Сервер недоступен"
+          description="Сервер недоступен. Если вы используете self-hosted версию, убедитесь, что сервер запущен и правильно настроен."
           icon="i-tabler-server-spark"
           class="p-6 pt-12 sm:pt-32"
           cta={(
@@ -60,7 +60,7 @@ export const ConfigProvider: ParentComponent = (props) => {
               variant="outline"
             >
               <span class="i-tabler-refresh size-4 mr-2 text-primary" />
-              Retry
+              Повторить
             </Button>
           )}
         />

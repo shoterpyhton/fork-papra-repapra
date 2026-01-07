@@ -20,7 +20,7 @@ export function OrganizationPickerButton({ onPress }: OrganizationPickerButtonPr
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <View style={styles.content}>
         <Text style={styles.orgName} numberOfLines={1}>
-          {currentOrganization?.name ?? 'Select Organization'}
+          {currentOrganization?.name ?? 'Выберите папку'}
         </Text>
       </View>
       <Icon name="chevron-down" style={styles.caret} size={20} />

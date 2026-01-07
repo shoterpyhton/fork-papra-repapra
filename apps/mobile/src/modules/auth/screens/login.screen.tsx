@@ -57,8 +57,8 @@ export function LoginScreen() {
         router.replace('/(app)/(with-organizations)/(tabs)/list');
       } catch (error) {
         showAlert({
-          title: 'Login Failed',
-          message: error instanceof Error ? error.message : 'An error occurred',
+          title: 'Ошибка входа',
+          message: error instanceof Error ? error.message : 'Произошла ошибка',
         });
       } finally {
         setIsSubmitting(false);
@@ -74,8 +74,8 @@ export function LoginScreen() {
       }
     } catch (error) {
       showAlert({
-        title: 'Sign In Failed',
-        message: error instanceof Error ? error.message : 'An error occurred',
+        title: 'Ошибка входа',
+        message: error instanceof Error ? error.message : 'Произошла ошибка',
       });
     }
   };
@@ -108,8 +108,8 @@ export function LoginScreen() {
         <BackToServerSelectionButton />
 
         <View style={styles.header}>
-          <Text style={styles.title}>Welcome Back</Text>
-          <Text style={styles.subtitle}>Sign in to your account</Text>
+          <Text style={styles.title}>С возвращением</Text>
+          <Text style={styles.subtitle}>Войдите в аккаунт</Text>
         </View>
 
         {isEmailEnabled && (
@@ -137,10 +137,10 @@ export function LoginScreen() {
             <form.Field name="password">
               {field => (
                 <View style={styles.fieldContainer}>
-                  <Text style={styles.label}>Password</Text>
+                  <Text style={styles.label}>Пароль</Text>
                   <TextInput
                     style={styles.input}
-                    placeholder="Enter your password"
+                    placeholder="Введите пароль"
                     placeholderTextColor={themeColors.mutedForeground}
                     value={field.state.value}
                     onChangeText={field.handleChange}
@@ -162,7 +162,7 @@ export function LoginScreen() {
                     <ActivityIndicator color="#fff" />
                   )
                 : (
-                    <Text style={styles.buttonText}>Sign In</Text>
+                    <Text style={styles.buttonText}>Войти</Text>
                   )}
             </TouchableOpacity>
           </View>
@@ -173,7 +173,7 @@ export function LoginScreen() {
             {isEmailEnabled && (
               <View style={styles.divider}>
                 <View style={styles.dividerLine} />
-                <Text style={styles.dividerText}>OR</Text>
+                <Text style={styles.dividerText}>ИЛИ</Text>
                 <View style={styles.dividerLine} />
               </View>
             )}
@@ -184,7 +184,7 @@ export function LoginScreen() {
                   style={styles.socialButton}
                   onPress={async () => handleSocialSignIn('google')}
                 >
-                  <Text style={styles.socialButtonText}>Continue with Google</Text>
+                  <Text style={styles.socialButtonText}>Войти через Google</Text>
                 </TouchableOpacity>
               )}
 
@@ -193,7 +193,7 @@ export function LoginScreen() {
                   style={styles.socialButton}
                   onPress={async () => handleSocialSignIn('github')}
                 >
-                  <Text style={styles.socialButtonText}>Continue with GitHub</Text>
+                  <Text style={styles.socialButtonText}>Войти через GitHub</Text>
                 </TouchableOpacity>
               )}
 
@@ -204,7 +204,7 @@ export function LoginScreen() {
                   onPress={async () => handleSocialSignIn(provider.providerId)}
                 >
                   <Text style={styles.socialButtonText}>
-                    Continue with
+                    Войти через
                     {' '}
                     {provider.providerName}
                   </Text>
@@ -220,7 +220,7 @@ export function LoginScreen() {
             onPress={() => router.push('/auth/signup')}
           >
             <Text style={styles.linkText}>
-              Don&apos;t have an account? Sign up
+              Нет аккаунта? Зарегистрироваться
             </Text>
           </TouchableOpacity>
         )}

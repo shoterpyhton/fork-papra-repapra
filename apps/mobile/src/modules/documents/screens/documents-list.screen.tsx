@@ -149,9 +149,9 @@ export function DocumentsListScreen() {
               )}
               ListEmptyComponent={(
                 <View style={styles.emptyContainer}>
-                  <Text style={styles.emptyText}>No documents yet</Text>
+                  <Text style={styles.emptyText}>Документов пока нет</Text>
                   <Text style={styles.emptySubtext}>
-                    Upload your first document to get started
+                    Загрузите первый документ для начала работы
                   </Text>
                 </View>
               )}

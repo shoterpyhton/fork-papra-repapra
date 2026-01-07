@@ -1,6 +1,6 @@
 import type { ParentComponent } from 'solid-js';
 import { A, useParams } from '@solidjs/router';
-import { For } from 'solid-js';
+import { createSignal, For, onMount } from 'solid-js';
 import { useI18n } from '@/modules/i18n/i18n.provider';
 import { cn } from '@/modules/shared/style/cn';
 import { Button } from '../components/button';
@@ -10,6 +10,13 @@ import { SideNav } from './sidenav.layout';
 export const OrganizationSettingsLayout: ParentComponent = (props) => {
   const params = useParams();
   const { t } = useI18n();
+  const [isSheetOpen, setIsSheetOpen] = createSignal(false);
+
+  onMount(() => {
+    if (window.innerWidth < 768) {
+      setIsSheetOpen(true);
+    }
+  });
 
   const getNavigationItems = () => [
     {
@@ -58,7 +65,7 @@ export const OrganizationSettingsLayout: ParentComponent = (props) => {
           <Button variant="ghost" size="icon" class="text-muted-foreground mr-2" as={A} href={`/organizations/${params.organizationId}`}>
             <div class="i-tabler-arrow-left size-5" />
           </Button>
-          <Sheet>
+          <Sheet open={isSheetOpen()} onOpenChange={setIsSheetOpen}>
             <SheetTrigger>
               <Button variant="ghost" size="icon">
                 <div class="i-tabler-menu-2 size-6" />

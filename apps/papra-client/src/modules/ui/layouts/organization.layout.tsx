@@ -168,7 +168,7 @@ const OrganizationLayoutSideNav: Component = () => {
                     <SelectItem class="cursor-pointer" item={props.item}>
                       <div class="flex items-center gap-2 text-muted-foreground">
                         <div class="i-tabler-plus size-4" />
-                        <div>Create new organization</div>
+                        <div>{t('organizations.list.create-new')}</div>
                       </div>
                     </SelectItem>
                   )

@@ -79,8 +79,8 @@ export function DocumentActionSheet({
 
     if (baseUrl == null) {
       showAlert({
-        title: 'Error',
-        message: 'Base URL not found',
+        title: 'Ошибка',
+        message: 'URL сервера не найден',
       });
       return;
     }
@@ -88,8 +88,8 @@ export function DocumentActionSheet({
     const canShare = await Sharing.isAvailableAsync();
     if (!canShare) {
       showAlert({
-        title: 'Sharing Failed',
-        message: 'Sharing is not available on this device. Please share the document manually.',
+        title: 'Ошибка отправки',
+        message: 'Отправка недоступна на этом устройстве.',
       });
       return;
     }
@@ -106,8 +106,8 @@ export function DocumentActionSheet({
     } catch (error) {
       console.error('Error downloading document file:', error);
       showAlert({
-        title: 'Error',
-        message: 'Failed to download document file',
+        title: 'Ошибка',
+        message: 'Не удалось скачать файл документа',
       });
     }
   };

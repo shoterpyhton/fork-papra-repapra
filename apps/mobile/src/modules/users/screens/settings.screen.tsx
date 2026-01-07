@@ -20,12 +20,12 @@ export default function SettingsScreen() {
 
   const handleSignOut = () => {
     showAlert({
-      title: 'Sign Out',
-      message: 'Are you sure you want to sign out?',
+      title: 'Выход',
+      message: 'Вы уверены, что хотите выйти?',
       buttons: [
-        { text: 'Cancel', style: 'cancel' },
+        { text: 'Отмена', style: 'cancel' },
         {
-          text: 'Sign Out',
+          text: 'Выйти',
           style: 'destructive',
           onPress: async () => {
             await authClient.signOut();
@@ -41,7 +41,7 @@ export default function SettingsScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Settings</Text>
+        <Text style={styles.title}>Настройки</Text>
       </View>
 
       <View style={styles.section}>
@@ -49,7 +49,7 @@ export default function SettingsScreen() {
         {session.data?.user && (
           <>
             <View style={styles.infoRow}>
-              <Text style={styles.infoLabel}>Name</Text>
+              <Text style={styles.infoLabel}>Имя</Text>
               <Text style={styles.infoValue}>{session.data.user.name}</Text>
             </View>
             <View style={styles.infoRow}>
@@ -57,9 +57,9 @@ export default function SettingsScreen() {
               <Text style={styles.infoValue}>{session.data.user.email}</Text>
             </View>
             <View style={styles.infoRow}>
-              <Text style={styles.infoLabel}>Email Verified</Text>
+              <Text style={styles.infoLabel}>Email подтверждён</Text>
               <Text style={styles.infoValue}>
-                {session.data.user.emailVerified ? 'Yes' : 'No'}
+                {session.data.user.emailVerified ? 'Да' : 'Нет'}
               </Text>
             </View>
           </>
@@ -72,7 +72,7 @@ export default function SettingsScreen() {
           onPress={handleSignOut}
         >
           <Text style={[styles.actionButtonText, styles.dangerText]}>
-            Sign Out
+            Выйти
           </Text>
         </TouchableOpacity>
       </View>

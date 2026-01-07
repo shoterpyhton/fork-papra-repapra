@@ -3,7 +3,7 @@
 ## Сборка Docker образа
 
 ```bash
-git clone https://github.com/shoterpyhton/fork-papra-ru.git $ cd fork-papra-ru
+git clone https://github.com/shoterpyhton/fork-papra-repapra $ cd fork-papra-ru
 
 docker build -f packages/docker/Dockerfile -t papra-ru:latest .
 ```
